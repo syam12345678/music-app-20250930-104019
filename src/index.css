@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&family=VT323&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 0 0% 7%; /* #121212 */
+    --foreground: 0 0% 92%; /* #EAEAEA */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 22 83% 76%; /* #F4B393 */
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 22 83% 76%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 92%;
+    --border: 22 83% 76%;
+    --input: 0 0% 12%;
+    --ring: 22 83% 76%;
+    --radius: 0rem;
+  }
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 92%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 92%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 92%;
+    --primary: 22 83% 76%;
+    --primary-foreground: 0 0% 7%;
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 22 83% 76%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 92%;
+    --border: 22 83% 76%;
+    --input: 0 0% 12%;
+    --ring: 22 83% 76%;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    image-rendering: pixelated;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+@layer components {
+  .retro-card {
+    @apply bg-card border-2 border-primary/50;
+    box-shadow: 0 0 15px -5px hsl(var(--primary) / 0.5);
+  }
+  .retro-btn {
+    @apply border-2 border-primary text-primary transition-all duration-200 ease-in-out;
+  }
+  .retro-btn:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+  .retro-btn:active {
+    @apply translate-x-0.5 translate-y-0.5;
+  }
+  .retro-btn:disabled {
+    @apply border-muted-foreground/50 text-muted-foreground/50 bg-transparent;
+  }
+  .retro-btn:focus-visible {
+    @apply ring-2 ring-offset-2 ring-offset-background ring-primary;
+  }
+}
